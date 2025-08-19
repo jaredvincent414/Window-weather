@@ -8,7 +8,7 @@ import SearchBar from './components/SearchBar';
 import PopularCities from './components/PopularCities';
 import WeatherDetails from './components/WeatherDetails';
 
-const API_KEY='76e51cf35789a0121041070ca8fa30f9'
+const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY
 
 function App() {
   const [weatherData, setWeatherData] = useState(null)
