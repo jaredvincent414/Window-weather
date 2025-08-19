@@ -31,7 +31,7 @@
   --blur-strong: blur(12px);
   
   /* Gradients */
-  --gradient-glass: linear-gradient(135deg, rgba(139, 177, 182, 0.3), rgba(255, 255, 255, 0.1));
+  --gradient-glass: linear-gradient(135deg, rgba(35, 94, 127, 0.3), rgba(165, 209, 229, 0.1));
   --gradient-overlay: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
 }
 
