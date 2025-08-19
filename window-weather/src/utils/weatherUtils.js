@@ -31,3 +31,13 @@ export const getWeatherBackground = (weatherMain) => {
 
     return getWeatherBackgrounds.default
 }
+
+export const popularCities = [
+    'Nairobi',
+    'London',
+    'Berlin',
+    'New York',
+    'Barcelona',
+    'Manchester',
+    'Madrid'
+]

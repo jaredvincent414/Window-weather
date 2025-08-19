@@ -20,7 +20,7 @@ function WeatherDisplay({ weatherData }){
     return (
         <div className='weather-display'>
             <div className='temperature'>
-                {Math.round(weatherData.main.temp)}
+                {Math.round(weatherData.main.temp)}°
             </div>
 
             <div className="loaction-info">
@@ -29,6 +29,13 @@ function WeatherDisplay({ weatherData }){
                 <div className="weather-condition">
                     {weatherData.weather[0].main}
                 </div>
+            </div>
+            <div className='weather-icon'>
+                <img
+                    src = {`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+                    alt = {weatherData.weather[0].description}
+                    
+                />
             </div>
         </div>
     );

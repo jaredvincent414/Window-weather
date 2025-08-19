@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import {getWeatherBackground} from './utils/weatherUtils';
+import {getWeatherBackground, popularCities} from './utils/weatherUtils';
 import './styles/base.css'
 import WeatherDisplay from './components/WeatherDisplay';
 import LoadingSpinner from './components/LoadingSpinner';
 import ErrorMessage from './components/ErrorMessage';
 import SearchBar from './components/SearchBar';
-
+import PopularCities from './components/PopularCities';
+import WeatherDetails from './components/WeatherDetails';
 
 const API_KEY='76e51cf35789a0121041070ca8fa30f9'
 
@@ -44,6 +45,11 @@ function App() {
       fetchWeatherData(searchCity.trim())
     }
   }
+  const handleCitySelect=(city)=>{
+    setSearchCity(city)
+    fetchWeatherData(city)
+
+  }
 
   const currentBackground = weatherData
     ? getWeatherBackground(weatherData.weather[0].main)
@@ -75,7 +81,13 @@ function App() {
               setSearchCity = {setSearchCity}
               handleSearch = {handleSearch}
           />
-
+          {/* Popular Cities */}
+          <PopularCities 
+            cities = {popularCities}
+            onCitySelect = {handleCitySelect}
+          />
+          {/* Weather Details */}
+          {weatherData && <WeatherDetails weatherData = {weatherData}/>}
       </div>
 
     </div>
